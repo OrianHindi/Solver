@@ -1,0 +1,3 @@
+/home/yirat/Desktop/C++/matala3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yirat/Desktop/C++/matala3/cmake-build-debug/CMakeFiles/matala3.dir
+/home/yirat/Desktop/C++/matala3/cmake-build-debug/CMakeFiles/edit_cache.dir

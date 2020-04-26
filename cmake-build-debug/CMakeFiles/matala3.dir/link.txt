@@ -1,0 +1,1 @@
+/usr/bin/clang++-9  -g   CMakeFiles/matala3.dir/main.cpp.o  -o matala3 
