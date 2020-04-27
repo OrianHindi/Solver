@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/matala3.dir/main.cpp.o"
+  "CMakeFiles/matala3.dir/solver.cpp.o"
   "matala3"
   "matala3.pdb"
 )

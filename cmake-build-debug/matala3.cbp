@@ -89,6 +89,12 @@
 		<Unit filename="/home/yirat/Desktop/C++/matala3/main.cpp">
 			<Option target="matala3"/>
 		</Unit>
+		<Unit filename="/home/yirat/Desktop/C++/matala3/solver.cpp">
+			<Option target="matala3"/>
+		</Unit>
+		<Unit filename="/home/yirat/Desktop/C++/matala3/solver.hpp">
+			<Option target="matala3"/>
+		</Unit>
 		<Unit filename="/home/yirat/Desktop/C++/matala3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
