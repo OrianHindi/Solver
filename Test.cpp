@@ -52,29 +52,29 @@ TEST_CASE("Tests without organ assembly"){
 }//9
 
 TEST_CASE("exceptions"){
-    CHECK_THROWS(solve(x*x*x==9));
-    CHECK_THROWS(solve((x^2)==-16));
-    CHECK_THROWS(solve(x*x==-16));
-    CHECK_THROWS(solve((x^2)+30==15));
-    CHECK_THROWS(solve((x^2)==4));
-    CHECK_THROWS(solve(x/0));
-    CHECK_THROWS(solve((x*x)/0));
-    CHECK_THROWS(solve((x^7)+40==10));
-    CHECK_THROWS(solve((x^2)*x==4*x-4));
-    CHECK_THROWS(solve(4/x==(x^3)));
+            CHECK_THROWS(solve(x*x*x==9));
+            CHECK_THROWS(solve((x^2)==-16));
+            CHECK_THROWS(solve(x*x==-16));
+            CHECK_THROWS(solve((x^2)+30==15));
+            CHECK_THROWS(solve((x^2)==4));
+            CHECK_THROWS(solve(x/0));
+            CHECK_THROWS(solve((x*x)/0));
+            CHECK_THROWS(solve((x^7)+40==10));
+            CHECK_THROWS(solve((x^2)*x==4*x-4));
+            CHECK_THROWS(solve(4/x==(x^3)));
 }
 
 TEST_CASE("ComplexVariables"){
-    CHECK(solve(c+3i==2i) == complex<double> (0.0,-1.0));
-    CHECK(solve(2*c+5==4*c-3)==complex<double> (4.0,0.0));
-    CHECK((solve((c^2)==16)==complex<double> (4.0,0.0) || solve((c^2)==16)==complex<double> (4.0,0.0)));
-    CHECK((solve((c^2)==-16)==complex<double> (0.0,4.0) || solve((c^2)==-16)==complex<double> (0.0,-4.0)));
-    CHECK((solve(c*c+4i==5i)==complex<double> (0.0,1.0) || solve(c*c+4i==5i)==complex<double> (0.0,-1.0)));
-    CHECK(solve(2*c+4==3*c+2i)==complex<double> (4.0,-2.0));
-    CHECK((solve((c^2) + 2*c + 4 == 20 + 6*c/2 - c)==complex<double> (4.0,0.0) || solve((c^2) + 2*c + 4 == 20 + 6*c/2 - c)==complex<double> (-4.0,0.0)));
-    CHECK(solve(4*c-c+c==0)==complex<double> (0.0,0.0));
-    CHECK(solve(c+2i==2*c-5)==complex<double> (5.0,2.0));
-    CHECK(solve(2*c-c+4==-1*c+2i)==complex<double> (-2.0,1.0));
+            CHECK(solve(c+3i==2i) == complex<double> (0.0,-1.0));
+            CHECK(solve(2*c+5==4*c-3)==complex<double> (4.0,0.0));
+            CHECK((solve((c^2)==16)==complex<double> (4.0,0.0) || solve((c^2)==16)==complex<double> (4.0,0.0)));
+            CHECK((solve((c^2)==-16)==complex<double> (0.0,4.0) || solve((c^2)==-16)==complex<double> (0.0,-4.0)));
+            CHECK((solve(c*c+4i==5i)==complex<double> (0.0,1.0) || solve(c*c+4i==5i)==complex<double> (0.0,-1.0)));
+            CHECK(solve(2*c+4==3*c+2i)==complex<double> (4.0,-2.0));
+            CHECK((solve((c^2) + 2*c + 4 == 20 + 6*c/2 - c)==complex<double> (4.0,0.0) || solve((c^2) + 2*c + 4 == 20 + 6*c/2 - c)==complex<double> (-4.0,0.0)));
+            CHECK(solve(4*c-c+c==0)==complex<double> (0.0,0.0));
+            CHECK(solve(c+2i==2*c-5)==complex<double> (5.0,2.0));
+            CHECK(solve(2*c-c+4==-1*c+2i)==complex<double> (-2.0,1.0));
 
 }
 
@@ -103,13 +103,11 @@ TEST_CASE("ComplexVariable 2"){
             CHECK(solve(2*c-c+4==-1*c+2i)==complex<double> (-2.0,1.0));
             CHECK(solve(3+c+3i==2i) == complex<double> (-3.0,-1.0));
             CHECK(solve(2*c+2i==4*c-6)==complex<double> (3.0,1.0));
-
             CHECK(solve(2*c+4==3*c+2)==complex<double> (2.0,0.0));
             CHECK((solve((c^2) + 2*c + 4 == 20 + 6*c/2 - c)==complex<double> (4.0,0.0) || solve((c^2) + 2*c + 4 == 20 + 6*c/2 - c)==complex<double> (-4.0,0.0)));
             CHECK(solve(4*c-c-4*c==4)==complex<double> (-4.0,0.0));
             CHECK(solve(5+c+2i==2*c+5i)==complex<double> (5.0,-3.0));
             CHECK(solve(2*c-c+4==2i)==complex<double> (-4.0,2.0));
-
             CHECK((solve((c^2)==100)==complex<double> (10.0,0.0) || solve((c^2)==100)==complex<double> (-10.0,0.0)));
             CHECK((solve((c^2)==-64)==complex<double> (0.0,8.0) || solve((c^2)==64)==complex<double> (0.0,-8.0)));
             CHECK((solve(c*c+4i==20i)==complex<double> (0.0,4.0) || solve(c*c+4i==5i)==complex<double> (0.0,-4.0)));

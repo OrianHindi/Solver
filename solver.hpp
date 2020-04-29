@@ -6,8 +6,18 @@ using namespace std;
 
 namespace solver{
     class RealVariable{
-        double real;
+
     public:
+        double a;
+        double b;
+        double c;
+        int a_power;
+        int b_power;
+        RealVariable(){
+            a=c=0;
+            a_power=2;
+            b=b_power=1;
+        }
         friend RealVariable& operator * (double n,RealVariable& r);
         friend RealVariable& operator * (RealVariable& r, double n);
         friend RealVariable& operator * (RealVariable& r1, RealVariable& r2);
