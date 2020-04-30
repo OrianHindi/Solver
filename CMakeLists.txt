@@ -3,4 +3,4 @@ project(matala3)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(matala3 main.cpp solver.cpp solver.hpp Test.cpp)
+add_executable(matala3 Demo.cpp solver.cpp solver.hpp )

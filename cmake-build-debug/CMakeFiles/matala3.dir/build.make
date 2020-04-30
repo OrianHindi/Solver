@@ -57,18 +57,18 @@ include CMakeFiles/matala3.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/matala3.dir/flags.make
 
-CMakeFiles/matala3.dir/main.cpp.o: CMakeFiles/matala3.dir/flags.make
-CMakeFiles/matala3.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yirat/Desktop/C++/matala3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/matala3.dir/main.cpp.o"
-	/usr/bin/clang++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/matala3.dir/main.cpp.o -c /home/yirat/Desktop/C++/matala3/main.cpp
+CMakeFiles/matala3.dir/Demo.cpp.o: CMakeFiles/matala3.dir/flags.make
+CMakeFiles/matala3.dir/Demo.cpp.o: ../Demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yirat/Desktop/C++/matala3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/matala3.dir/Demo.cpp.o"
+	/usr/bin/clang++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/matala3.dir/Demo.cpp.o -c /home/yirat/Desktop/C++/matala3/Demo.cpp
 
-CMakeFiles/matala3.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/matala3.dir/main.cpp.i"
-	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yirat/Desktop/C++/matala3/main.cpp > CMakeFiles/matala3.dir/main.cpp.i
+CMakeFiles/matala3.dir/Demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/matala3.dir/Demo.cpp.i"
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yirat/Desktop/C++/matala3/Demo.cpp > CMakeFiles/matala3.dir/Demo.cpp.i
 
-CMakeFiles/matala3.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/matala3.dir/main.cpp.s"
-	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yirat/Desktop/C++/matala3/main.cpp -o CMakeFiles/matala3.dir/main.cpp.s
+CMakeFiles/matala3.dir/Demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/matala3.dir/Demo.cpp.s"
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yirat/Desktop/C++/matala3/Demo.cpp -o CMakeFiles/matala3.dir/Demo.cpp.s
 
 CMakeFiles/matala3.dir/solver.cpp.o: CMakeFiles/matala3.dir/flags.make
 CMakeFiles/matala3.dir/solver.cpp.o: ../solver.cpp
@@ -85,13 +85,13 @@ CMakeFiles/matala3.dir/solver.cpp.s: cmake_force
 
 # Object files for target matala3
 matala3_OBJECTS = \
-"CMakeFiles/matala3.dir/main.cpp.o" \
+"CMakeFiles/matala3.dir/Demo.cpp.o" \
 "CMakeFiles/matala3.dir/solver.cpp.o"
 
 # External object files for target matala3
 matala3_EXTERNAL_OBJECTS =
 
-matala3: CMakeFiles/matala3.dir/main.cpp.o
+matala3: CMakeFiles/matala3.dir/Demo.cpp.o
 matala3: CMakeFiles/matala3.dir/solver.cpp.o
 matala3: CMakeFiles/matala3.dir/build.make
 matala3: CMakeFiles/matala3.dir/link.txt

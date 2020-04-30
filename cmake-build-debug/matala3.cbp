@@ -86,7 +86,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/yirat/Desktop/C++/matala3/main.cpp">
+		<Unit filename="/home/yirat/Desktop/C++/matala3/Demo.cpp">
 			<Option target="matala3"/>
 		</Unit>
 		<Unit filename="/home/yirat/Desktop/C++/matala3/solver.cpp">
