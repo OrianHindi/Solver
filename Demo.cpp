@@ -16,7 +16,9 @@ using solver::solve, solver::RealVariable, solver::ComplexVariable;
 int main() {
     RealVariable x;
     ComplexVariable y;
-    std::complex<double> p = solve(2*y+5i+3==3*y+4);
+    std::complex<double> p = solve((y^2)==16.0+9i);
+    double pa = solve(2*x-4 == 10);
+    cout <<" pa is: "<<  pa<<endl;
     //a=c=a_power=0; b=2,b_power=1; c=-4;
     cout<<"real : " <<p.real() <<endl;
     cout<< "image : "<<p.imag();

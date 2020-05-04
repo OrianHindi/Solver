@@ -43,12 +43,11 @@ RealVariable& solver::operator ^ (RealVariable& r, double n){ //good
         return new_var;}
     if(n==0){
         new_var.c=1;
-        new_var.a=new_var.b=new_var.a_power=new_var.b_power=0;
+        new_var.a=new_var.b=0;
         return new_var;
     }
     if(r.b!=0 && r.c!=0){  //kefel mekozar.
         new_var.a=pow(r.b,n);
-        new_var.a_power=n;
         new_var.b=n*r.b*r.c;
         new_var.c=pow(r.c,n);
         return new_var;
@@ -58,9 +57,7 @@ RealVariable& solver::operator ^ (RealVariable& r, double n){ //good
         return new_var;
     }
     new_var.a=pow(r.b,n);
-    new_var.a_power=n;
     new_var.b=0;
-    new_var.b_power=0;
     return new_var;
 }
 
@@ -117,13 +114,6 @@ RealVariable& solver::operator / (RealVariable& r,double n){ //good
     new_var.c=r.c/n;
     return new_var;
 }
-RealVariable& solver::operator / (double n,RealVariable& r){ //check if needed.
-
-    return r;
-}
-RealVariable& solver::operator / (RealVariable& r1,RealVariable& r2){    //check if needed.
-    return r1;
-}
 
 RealVariable& solver::operator == (RealVariable& r, double n){ //last op .
     RealVariable* temp = new RealVariable;
@@ -148,16 +138,19 @@ ComplexVariable& solver::operator * (ComplexVariable& r, double n){
     ComplexVariable* temp = new ComplexVariable;
     listComp.push_back(temp);
     ComplexVariable& new_var = *temp;
-    new_var.real=r.real*n;
-    new_var.image=r.image*n;
+    new_var.real=r.real;
+    new_var.image=r.image;
+    new_var.power=r.power;
+    new_var.coeff=n*r.coeff;
     return new_var;
+
 }
 ComplexVariable& solver::operator * (ComplexVariable& r1, ComplexVariable& r2){
     ComplexVariable* temp = new ComplexVariable;
     listComp.push_back(temp);
     ComplexVariable& new_var = *temp;
-    new_var.real=r1.real*r2.real - r1.image*r2.image;
-    new_var.image=r1.image*r2.real + r1.real*r2.image;
+    new_var.coeff=r1.coeff*r2.coeff;
+    new_var.power=2;
     return new_var;
 }
 ComplexVariable& solver::operator * (double n,ComplexVariable& r){
@@ -178,8 +171,8 @@ ComplexVariable& solver::operator ^ (ComplexVariable& r, double n){
     if(n==0){
         new_var.real=1;
         new_var.image=0;
-        new_var.coeff=1;
-        new_var.power=1;
+        new_var.coeff=0;
+        new_var.power=0;
         return new_var;
     }
     return r*r;
@@ -191,6 +184,8 @@ ComplexVariable& solver::operator - (double n, ComplexVariable& r){
     ComplexVariable& new_var = *temp;
     new_var.real = n-r.real;
     new_var.image = -r.image;
+    new_var.coeff=-r.coeff;
+    new_var.power=r.power;
     return new_var;
 }
 ComplexVariable& solver::operator - (ComplexVariable& r, double n){
@@ -199,6 +194,8 @@ ComplexVariable& solver::operator - (ComplexVariable& r, double n){
     ComplexVariable& new_var = *temp;
     new_var.real = r.real-n;
     new_var.image = r.image;
+    new_var.coeff=r.coeff;
+    new_var.power=r.power;
     return new_var;
 }
 ComplexVariable& solver::operator - (ComplexVariable& r1, ComplexVariable& r2){
@@ -207,6 +204,8 @@ ComplexVariable& solver::operator - (ComplexVariable& r1, ComplexVariable& r2){
     ComplexVariable& new_var = *temp;
     new_var.real=r1.real-r2.real;
     new_var.image=r1.image-r2.image;
+    new_var.coeff=r1.coeff-r2.coeff;
+    new_var.power=r1.power;
     return new_var;
 }
 ComplexVariable& solver::operator + (ComplexVariable& r,double n){
@@ -215,6 +214,8 @@ ComplexVariable& solver::operator + (ComplexVariable& r,double n){
     ComplexVariable& new_var = *temp;
     new_var.real = r.real+n;
     new_var.image = r.image;
+    new_var.power=r.power;
+    new_var.coeff=r.coeff;
     return new_var;
 }
 ComplexVariable& solver::operator + ( double n,ComplexVariable& r){
@@ -226,6 +227,9 @@ ComplexVariable& solver::operator + (ComplexVariable& r1,ComplexVariable& r2){
     ComplexVariable& new_var = *temp;
     new_var.real=r1.real+r2.real;
     new_var.image=r1.image+r2.image;
+    new_var.coeff=r1.coeff+r2.coeff;
+    new_var.power=r1.power;
+
     return new_var;
 }
 
@@ -235,29 +239,48 @@ ComplexVariable& solver::operator + (ComplexVariable& r1,complex<double> r2){
     ComplexVariable& new_var = *temp;
     new_var.real=r1.real+r2.real();
     new_var.image=r1.image+r2.imag();
+    new_var.coeff=r1.coeff;
+    new_var.power=r1.power;
     return new_var;
 }
 ComplexVariable& solver::operator / (ComplexVariable& r,double n){
     ComplexVariable* temp = new ComplexVariable;
     listComp.push_back(temp);
     ComplexVariable& new_var = *temp;
-    new_var.real=r.real/n;
-    new_var.image=r.image/n;
+    new_var.real=r.real;
+    new_var.image=r.image;
+    new_var.coeff=r.coeff/n;
+    new_var.power=r.power;
     return new_var;
 }
-ComplexVariable& solver::operator / (double n,ComplexVariable& r){ //check if needed.
 
-    return r;
-}
-ComplexVariable& solver::operator / (ComplexVariable& r1,ComplexVariable& r2){ //check
-    return r1;
-}
 ComplexVariable& solver::operator == (ComplexVariable& r, double n){
-    return r;
+    return r-n;
 }
 
 complex<double> solver::solve (ComplexVariable& c){
-    return std::complex<double>(c.real,c.image);
+    double i,r;
+    if(c.power==2){
+        if(c.real>0){
+            i=sqrt(c.real/c.coeff);
+            r=0;
+        }
+        else{
+            r=sqrt(-c.real/c.coeff);
+            i=0;
+        }
+    }
+    else if(c.power==1 && c.coeff!=0){
+        r=-c.real/c.coeff;
+        i=-c.image/c.coeff;
+    }
+    else if(c.coeff==0) throw runtime_error("Cant solve this question");
+    for(vector<ComplexVariable *>:: iterator it = listComp.begin(); it!=listComp.end(); ++it){
+        delete *it;
+    }
+    listComp.clear();
+
+    return std::complex<double>(r,i);
 }
 
 double solver::solve (RealVariable& r){
@@ -272,16 +295,27 @@ double solver::solve (RealVariable& r){
     }
     if(r.a==0 && r.b!=0 && r.c!=0) ans= (-r.c)/r.b;                                                //b,c
     if(r.a!=0 && r.b!=0 && r.c!=0)ans= (-r.b + sqrt(pow(r.b,2)-4*r.a*r.c))/2*r.a;             //a,b,c                                                                                      //a,b,c
-    for(int i=0; i<list.size(); i++){
-        delete list[i];
+    for(vector<RealVariable *>::iterator it = list.begin(); it!=list.end(); ++it){
+        delete *it;
     }
+    list.clear();
     return ans;
 }
 
 ComplexVariable& solver::operator == (ComplexVariable& r1,ComplexVariable& r2 ){
     return r1-r2;
+
 }
 ComplexVariable& solver::operator == (ComplexVariable& r1,std::complex<double> r2){
-    return r1;
+    ComplexVariable* temp = new ComplexVariable;
+    listComp.push_back(temp);
+    ComplexVariable& new_var = *temp;
+    new_var.real=r1.real=r2.real();
+    new_var.image=r1.image-r2.imag();
+    new_var.coeff=r1.coeff;
+    new_var.power=r1.power;
+    return new_var;
+
+
 }
 
