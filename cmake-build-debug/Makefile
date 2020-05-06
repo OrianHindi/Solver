@@ -123,33 +123,6 @@ matala3/fast:
 	$(MAKE) -f CMakeFiles/matala3.dir/build.make CMakeFiles/matala3.dir/build
 .PHONY : matala3/fast
 
-Demo.o: Demo.cpp.o
-
-.PHONY : Demo.o
-
-# target to build an object file
-Demo.cpp.o:
-	$(MAKE) -f CMakeFiles/matala3.dir/build.make CMakeFiles/matala3.dir/Demo.cpp.o
-.PHONY : Demo.cpp.o
-
-Demo.i: Demo.cpp.i
-
-.PHONY : Demo.i
-
-# target to preprocess a source file
-Demo.cpp.i:
-	$(MAKE) -f CMakeFiles/matala3.dir/build.make CMakeFiles/matala3.dir/Demo.cpp.i
-.PHONY : Demo.cpp.i
-
-Demo.s: Demo.cpp.s
-
-.PHONY : Demo.s
-
-# target to generate assembly for a file
-Demo.cpp.s:
-	$(MAKE) -f CMakeFiles/matala3.dir/build.make CMakeFiles/matala3.dir/Demo.cpp.s
-.PHONY : Demo.cpp.s
-
 solver.o: solver.cpp.o
 
 .PHONY : solver.o
@@ -186,9 +159,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... matala3"
 	@echo "... edit_cache"
-	@echo "... Demo.o"
-	@echo "... Demo.i"
-	@echo "... Demo.s"
 	@echo "... solver.o"
 	@echo "... solver.i"
 	@echo "... solver.s"

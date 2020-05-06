@@ -1,1 +1,1 @@
-/usr/bin/clang++-9  -g   CMakeFiles/matala3.dir/Demo.cpp.o CMakeFiles/matala3.dir/solver.cpp.o  -o matala3 
+/usr/bin/clang++-9  -g   CMakeFiles/matala3.dir/solver.cpp.o  -o matala3 

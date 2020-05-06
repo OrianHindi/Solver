@@ -16,24 +16,20 @@ namespace solver{
             a=c=0;
             b=1;
         }
-        friend RealVariable& operator * (double n,RealVariable& r);
-        friend RealVariable& operator * (RealVariable r, double n);
-        friend RealVariable& operator * (RealVariable& r1, RealVariable& r2);
-        friend RealVariable& operator ^ (RealVariable& r, double n);
-        friend RealVariable& operator - (double n, RealVariable& r);
-        friend RealVariable& operator - (RealVariable& r, double n);
-        friend RealVariable& operator - (RealVariable& r1, RealVariable& r2);
-        friend RealVariable& operator + (RealVariable& r,double n);
-        friend RealVariable& operator + (double n,RealVariable& r);
-        friend RealVariable& operator + (RealVariable& r1,RealVariable& r2);
-        friend RealVariable& operator / (RealVariable& r,double n);
-        friend RealVariable& operator == (RealVariable& r, double n);
-        friend RealVariable& operator == (RealVariable& r1,RealVariable& r2 );
-        friend RealVariable& operator == (double n,RealVariable& r);
-
-        ~RealVariable(){
-
-        }
+        friend RealVariable operator * (double n,const RealVariable& r);
+        friend RealVariable operator * (const RealVariable& r, double n);
+        friend RealVariable operator * (const RealVariable& r1,const RealVariable& r2);
+        friend RealVariable operator ^ (const RealVariable& r, double n);
+        friend RealVariable operator - (double n,const RealVariable& r);
+        friend RealVariable operator - (const RealVariable& r, double n);
+        friend RealVariable operator - (const RealVariable& r1,const RealVariable& r2);
+        friend RealVariable operator + (const RealVariable& r,double n);
+        friend RealVariable operator + (double n,const RealVariable& r);
+        friend RealVariable operator + (const RealVariable& r1,const RealVariable& r2);
+        friend RealVariable operator / (const RealVariable& r,double n);
+        friend RealVariable operator == (const RealVariable& r, double n);
+        friend RealVariable operator == (const RealVariable& r1,const RealVariable& r2 );
+        friend RealVariable operator == (double n,const RealVariable& r);
     };
     class ComplexVariable{
     public:
@@ -45,32 +41,26 @@ namespace solver{
             real=image=0;
             coeff=power=1;
         }
-        friend ComplexVariable& operator * (double n,ComplexVariable& r);
-        friend ComplexVariable& operator * (ComplexVariable& r, double n);
-        friend ComplexVariable& operator * (ComplexVariable& r1, ComplexVariable& r2);
-        friend ComplexVariable& operator ^ (ComplexVariable& r, double n);
-        friend ComplexVariable& operator - (double n, ComplexVariable& r);
-        friend ComplexVariable& operator - (ComplexVariable& r, double n);
-        friend ComplexVariable& operator - (ComplexVariable& r1,ComplexVariable& r2);
-        friend ComplexVariable& operator + (ComplexVariable& r,double n);
-        friend ComplexVariable& operator + (double n,ComplexVariable& r);
-        friend ComplexVariable& operator + (ComplexVariable& r1,ComplexVariable& r2);
-        friend ComplexVariable& operator + (ComplexVariable& r1,complex<double> r2);
-        friend ComplexVariable& operator / (ComplexVariable& r,double n);
-        friend ComplexVariable& operator == (ComplexVariable& r, double n);
-        friend ComplexVariable& operator == (ComplexVariable& r1,ComplexVariable& r2 );
-        friend ComplexVariable& operator == (ComplexVariable& r1,std::complex<double> r2);
-
-
-        // add << function.
+        friend ComplexVariable operator * (double n,const ComplexVariable& r);
+        friend ComplexVariable operator * (const ComplexVariable& r, double n);
+        friend ComplexVariable operator * (const ComplexVariable& r1,const ComplexVariable& r2);
+        friend ComplexVariable operator ^ (const ComplexVariable& r, double n);
+        friend ComplexVariable operator - (double n,const ComplexVariable& r);
+        friend ComplexVariable operator - (const ComplexVariable& r, double n);
+        friend ComplexVariable operator - (const ComplexVariable& r1,const ComplexVariable& r2);
+        friend ComplexVariable operator + (const ComplexVariable& r,double n);
+        friend ComplexVariable operator + (double n,const ComplexVariable& r);
+        friend ComplexVariable operator + (const ComplexVariable& r1,const ComplexVariable& r2);
+        friend ComplexVariable operator + (const ComplexVariable& r1,complex<double> r2);
+        friend ComplexVariable operator / (const ComplexVariable& r,double n);
+        friend ComplexVariable operator == (const ComplexVariable& r, double n);
+        friend ComplexVariable operator == (const ComplexVariable& r1,const ComplexVariable& r2 );
+        friend ComplexVariable operator == (const ComplexVariable& r1,std::complex<double> r2);
 
     };
 
-    complex<double> solve (ComplexVariable& c);
-    double solve (RealVariable& r);
-
-
-
+    complex<double> solve (const ComplexVariable& c);
+    double solve (const RealVariable& r);
 }
 
 
