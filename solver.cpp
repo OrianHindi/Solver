@@ -263,7 +263,5 @@ ComplexVariable solver::operator == (const ComplexVariable& r1,std::complex<doub
     new_var.coeff=r1.coeff;
     new_var.power=r1.power;
     return new_var;
-
-
 }
 
